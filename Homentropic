@@ -1,7 +1,34 @@
-echo "# Rossby-Wave-Instability-of-Dusty-Rings" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/kedar2402/Rossby-Wave-Instability-of-Dusty-Rings.git
-git push -u origin main
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 11 13:05:03 2022
+T VS R HOMENTROPIC 
+@author: kedarkulkarni
+"""
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# make data
+x = np.linspace(0, 2, 100)
+sig = 1 + (0.25) * np.exp(-0.5*((x-1)/(0.05))**2)
+
+p= sig**(5/3)
+
+t= p*sig
+
+# plot
+fig, ax = plt.subplots()
+
+ax.plot(x, t, linewidth=2.0)
+ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2))
+
+plt.grid()
+plt.title(" Tvs r Homentropic")
+plt.ylabel("T")
+plt.xlabel("r")
+
+
+plt.show()
