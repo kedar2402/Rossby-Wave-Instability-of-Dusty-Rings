@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 11 13:04:59 2022
+P vs r NONHOMENTROPIC 
+@author: kedarkulkarni
+"""
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+x = np.linspace(0.4, 1.6, 128)
+
+
+sig= 1+ ((0.109) * np.exp(-((x-1)**2)/0.05))
+
+s= 1+ (-0.100) * np.exp((-(x-1)**2)/0.05)
+
+
+p=s*(sig**(5/3))
+fig, ax = plt.subplots()
+
+ax.plot(x, p, linewidth=2.0)
+
+ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2))
+plt.grid()
+plt.title("Pressure vs r Nonhomentropic" )
+plt.ylabel("Pressure")
+plt.xlabel("r")
+
+
+plt.show()
