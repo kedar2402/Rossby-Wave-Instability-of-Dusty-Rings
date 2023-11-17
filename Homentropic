@@ -32,3 +32,36 @@ plt.xlabel("r")
 
 
 plt.show()
+
+
+
+P vs r Homentropic
+
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# make data
+x = np.linspace(0, 2, 100)
+sig = 1 + (0.25) * np.exp(-0.5*((x-1)/0.05)**2)
+
+p= sig**(5/3)
+
+# plot
+fig, ax = plt.subplots()
+
+ax.plot(x, p, linewidth=2.0)
+ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2))
+
+plt.grid()
+plt.title(" Pvs r Homentropic")
+plt.ylabel("P")
+plt.xlabel("r")
+
+
+plt.show()
+
+
