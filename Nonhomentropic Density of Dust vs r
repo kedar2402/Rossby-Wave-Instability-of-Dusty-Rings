@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 14 14:44:53 2022
+density of dust 
+
+@author: kedarkulkarni
+"""
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+
+
+x = np.linspace(0.4, 1.6, 128)
+sig= 1+ ((0.109) * np.exp(-((x-1)**2)/0.05))
+
+s= 1+ (-0.100) * np.exp((-(x-1)**2)/0.05)
+"""(-0.08 to -0.140)
+
+
+"""
+p=s*(sig**(5/3))
+
+
+"""sig**(5/3)
+"""
+rhog=p/(1**2)
+
+ 
+
+
+rhod=sig-rhog
+
+
+
+
+fig, ax = plt.subplots()
+
+ax.plot(x, rhod, linewidth=2.0)
+
+ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2))
+plt.grid()
+plt.title("rhod vs r Nonhomentropic" )
+plt.ylabel("rhod")
+plt.xlabel("r")
+
+
+
+plt.show()
