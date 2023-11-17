@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 14 14:30:58 2022
+density of gas
+@author: kedarkulkarni
+"""
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+
+x = np.linspace(0.4, 1.6, 128)
+sig= 1+ ((0.109) * np.exp(-((x-1)**2)/0.05))
+
+s= 1+ (-0.100) * np.exp((-(x-1)**2)/0.05)
+
+
+
+
+p=(sig**(5/3))*s
+
+rhog=p/(1**2)
+
+
+
+fig, ax = plt.subplots()
+
+ax.plot(x, rhog, linewidth=2.0)
+
+ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2))
+plt.grid()
+plt.title("rhog vs r Nonhomentropic" )
+plt.ylabel("rhog")
+plt.xlabel("r")
+
+
+plt.show()
+
