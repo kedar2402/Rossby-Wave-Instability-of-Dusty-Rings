@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 11 10:57:18 2022
+Sig vs r    NONHOMENTROPIC
+@author: kedarkulkarni
+"""
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# make data
+x = np.linspace(0, 2, 100)
+sig= 1 + ((-100) *  np.exp((-(x-1)**2/0.005)))
+
+# plot
+fig, ax = plt.subplots()
+
+ax.plot(x, S, linewidth=2.0)
+
+ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2) )
+plt.grid()
+plt.title("S vs r Nonhomentropic")
+plt.ylabel("S")
+plt.xlabel("r")
+
+
+plt.show()
+
