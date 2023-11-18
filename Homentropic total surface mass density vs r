@@ -12,7 +12,7 @@ import numpy as np
 
 # make data
 x = np.linspace(0.4, 1.6, 128)
-S i g = 1+((0.109)∗np.exp((−(x−1)∗∗2/0.05)))
+Sig = 1+((0.109)∗np.exp((−(x−1)∗∗2/0.05)))
 
 # plot
 fig, ax = plt.subplots()
