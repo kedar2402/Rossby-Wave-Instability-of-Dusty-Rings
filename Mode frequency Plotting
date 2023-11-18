@@ -14,7 +14,7 @@ y=np.array([ Mode frequency values])
 
 ax.plot(x, p, linewidth=2.0)
 ax.set(xlim=(0, 2), xticks=np.arange(0,2, 0.2))
-plt.plot(x,y)
+plt.plot(x, y)
 plt.grid()
 plt.title(" Model frequency vs Amplitude model")
 plt.ylabel("amplitude")
