@@ -1,0 +1,28 @@
+import autograd.numpy as np   # Thinly-wrapped version of Numpy
+
+import rwi
+
+np.random.seed(0)
+
+# Homogeneous Gaussian Bump (Li et al. 2000)
+A_dust = increses in small quantity
+A_gas =1.1
+dr_gas= 0.05
+dr_dust= 0.05 ( decreasing (dr) disk can be narrower)
+h = 0.1
+Gamma = 5/3
+Rhog=lambda r:1.0 + (A_gas-1)*np.exp(-0.5*(r - 1)**2/dr_gas/dr_gas)
+Rhod= lambda r:(A_dust)*np.exp(-0.5*(r - 1)**2/dr_dust/dr_dust)
+Sigma = lambda r: Rhog(r)+Rhod(r) 
+Pressure = lambda r: h*h*np.power(Rhog(r), Gamma)/Gamma 
+
+r = np.linspace(0.4, 1.6, 128)
+rwi_coeff = rwi.RWI_coeff(Sigma, Pressure, 5/3, r, homentropic_flag=False)
+rwi = rwi.RWI(r, rwi_coeff)
+
+# Compare right panels of fig 9 from Li et al. (2000)
+m = 5
+root = rwi.find_root(m)[0]
+
+print('Mode frequency: {}, growth rate: {}'.format(np.real(root)/m,
+                                                   np.imag(root)))
