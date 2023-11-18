@@ -1,0 +1,11 @@
+Mode frequency plotting
+Listing 11: mode frequency plotting
+import numpy as np
+import matplotlib . pyplot as plt
+x=np.array ( [ 0, 0.010,...., 0.10] )
+y=np.array ( [ Mode frequency values] )
+plt.plot (x, y)
+plt.title ( ”Mode frequency vs Amplitude model” )
+plt.xlabel(”amplitude”)
+plt.ylabel(”Mode frequency”)
+plt.show()
