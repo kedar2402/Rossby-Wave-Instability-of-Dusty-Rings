@@ -1,5 +1,4 @@
-Mode frequency plotting
-Listing 11: mode frequency plotting
+
 import numpy as np
 import matplotlib . pyplot as plt
 x=np.array ( [ 0, 0.010,...., 0.10] )
